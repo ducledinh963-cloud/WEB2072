@@ -11,9 +11,9 @@ const currentTab = ref(1);
 </script>
 
 <template>
-  <div id="app" class="bg-white min-vh-100">
+  <div id="app" class="bg-white min-vh-100 d-flex flex-column">
     <!-- Thanh chọn bài tối giản, nền trắng hoàn toàn -->
-    <div class="border-bottom py-2 bg-white">
+    <div class="border-bottom py-2 bg-white sticky-top shadow-sm">
       <div class="container d-flex justify-content-center gap-2">
         <button
           class="btn btn-sm"
@@ -61,7 +61,7 @@ const currentTab = ref(1);
     </div>
 
     <!-- Khu vực hiển thị nội dung từng bài -->
-    <main class="py-4">
+    <main class="py-4 flex-grow-1">
       <div v-if="currentTab === 1 || currentTab === 'all'" class="mb-5">
         <div v-if="currentTab === 'all'" class="container border-bottom pb-2 mb-3">
           <h4 class="text-secondary">Bài 1</h4>
@@ -94,6 +94,11 @@ const currentTab = ref(1);
         <Lab4SideBySide />
       </div>
     </main>
+
+    <!-- Thông tin sinh viên ở chân trang -->
+    <footer class="text-center py-3 text-muted border-top mt-auto bg-light">
+      <small>Sinh viên thực hiện: <strong>Lê Đình Đức</strong> - MSSV: <strong>PA00493</strong> | Lab 4 - WEB2072</small>
+    </footer>
   </div>
 </template>
 
